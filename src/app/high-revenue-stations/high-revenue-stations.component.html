@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let station of TopStationsList; index as i">
+            <div class="card" style="width: 18rem;"
+                [style.background-color]="i==0? '#f6edd8':''|| i==1 ?'#e1e1e1':'' || i==2?'#e7cfae':''">
+                <div class="card-body">
+                    <h4 class="card-title"><strong>Station ID :{{station.stationId}} </strong></h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Color Tells the Earning of stations accordingly.</h6>
+                    <ng-container *ngIf="i ==0">
+                        <h4 class="card-subtitle mb-2 text-muted" style="color: white; "><strong>Highest Earning
+                                Stations</strong></h4>
+                    </ng-container>
+                    <ng-container *ngIf="i ==1">
+                        <h4 class="card-subtitle mb-2 text-muted"><strong>Second Earning Stations</strong></h4>
+                    </ng-container>
+                    <ng-container *ngIf="i ==2">
+                        <h4 class="card-subtitle mb-2 text-muted "><strong>Earning Stations </strong></h4>
+                    </ng-container>
+                    <h3 class="card-title ">Station Name :</h3>
+                    <p class="card-text text-center">{{station.stationName}}</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="card-link">Revenue</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="card-link">AUD ${{station.revenue}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
